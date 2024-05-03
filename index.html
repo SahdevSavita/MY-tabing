@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabing</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="tab-nav">
+                    <ul class="tabs">
+                        <li class="tab" data-tab="tab-1">Tab One</li>
+                        <li class="tab" data-tab="tab-2">Tab Two</li>
+                        <li class="tab" data-tab="tab-3">Tab Three</li>
+                        <li class="tab current" data-tab="tab-4">Tab Four</li>
+                    </ul>
+                    <div id="tab-1" class="tab-content">
+                        <h2>Tab One</h2>
+                        <!-- Your content here -->
+                    </div>
+                 <div id="tab-2" class="tab-content">
+                        <h2>Tab Two</h2>
+                        <!-- Your content here -->
+
+                    </div>
+                    <div id="tab-3" class="tab-content">
+                        <h2>Tab Three</h2>
+                        <!-- Your content here -->
+                    </div>
+                    <div id="tab-4" class="tab-content current">
+                        <h2>Tab Four</h2>
+                        <!-- Your content here -->
+                    </div>
+
+                </div>
+            </div>
+    </div></section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('ul.tabs li').click(function () {
+                // get the data attribute
+                // remove the default classes
+                $('ul.tabs li').removeClass('current');
+                $('.tab-content').removeClass('current');
+                // add new classes on mouse click
+                $(this).addClass('current');
+
+                var tab_id = $(this).attr('data-tab');
+                $('#' + tab_id).addClass('current');
+            });
+        });
+    </script>
+</body>
+</html>
